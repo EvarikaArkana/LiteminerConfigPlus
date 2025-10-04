@@ -3,9 +3,9 @@
   "package": "eva.lcp.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "CyclerMixin"
   ],
   "client": [
+    "CyclerMixin",
     "client.LiteminerClientConfigMixin"
   ],
   "injectors": {
