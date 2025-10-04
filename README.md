@@ -1,1 +1,1 @@
-Evarika's Template Mod
+Fixes some issues with Liteminer's config
