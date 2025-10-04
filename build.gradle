@@ -42,6 +42,7 @@ loom {
             sourceSet sourceSets.main
         }
     }
+    accessWidenerPath = file("src/main/resources/lcp.accesswidener")
 }
 
 def getReleaseVersion(minecraftVersion) {

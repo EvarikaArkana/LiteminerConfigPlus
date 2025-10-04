@@ -14,33 +14,27 @@ public class LcpClient implements ClientModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     private static final KeyMapping FAKE_UP;
     private static final KeyMapping FAKE_DOWN;
-    private static boolean noHold = true;
     @Override
     public void onInitializeClient() {
         // This entrypoint is suitable for setting up client-specific logic, such as rendering.
         ClientTickEvents.END_CLIENT_TICK.register((client) -> {
-            boolean holdCheck = false;
-            if (FAKE_UP.isDown()) {
-                if (noHold)
-                    ClientRawInputEvent.MOUSE_SCROLLED.invoker().mouseScrolled(
-                            client,
-                            0.0,
-                            0.1
-                    );
-                holdCheck = true;
+            if (FAKE_UP.consumeClick()) {
+                ClientRawInputEvent.MOUSE_SCROLLED.invoker().mouseScrolled(
+                        client,
+                        0.0,
+                        0.1
+                );
             }
-            if (FAKE_DOWN.isDown()) {
-                if (noHold)
-                    ClientRawInputEvent.MOUSE_SCROLLED.invoker().mouseScrolled(
-                            client,
-                            0.0,
-                            -0.1
-                    );
-                holdCheck = true;
+            if (FAKE_DOWN.consumeClick()) {
+                ClientRawInputEvent.MOUSE_SCROLLED.invoker().mouseScrolled(
+                        client,
+                        0.0,
+                        -0.1
+                );
             }
-            noHold = !holdCheck;
         });
     }
+
     static {
         FAKE_UP = KeyBindingHelper.registerKeyBinding(new KeyMapping("Fake Scroll Up", InputConstants.Type.KEYSYM, -1, "key.categories.liteminer"));
         FAKE_DOWN = KeyBindingHelper.registerKeyBinding(new KeyMapping("Fake Scroll Down", InputConstants.Type.KEYSYM, -1, "key.categories.liteminer"));

@@ -56,5 +56,6 @@
         "liteminer(required){modrinth:liteminer}"
       ]
     }
-  }
+  },
+  "accessWidener": "lcp.accesswidener"
 }
