@@ -50,7 +50,7 @@
       }
     },
     "mc-publish": {
-      "modrinth": "",
+      "modrinth": "v2Dq5cIr",
       "curseforge": 0,
       "dependencies": [
         "liteminer(required){modrinth:liteminer}"
