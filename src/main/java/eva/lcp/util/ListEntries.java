@@ -1,6 +1,7 @@
 package eva.lcp.util;
 
 public enum ListEntries {
+    None(-1),
     Shapeless(0),
     Square(4),
     Downstairs(3),
