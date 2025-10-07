@@ -1,7 +1,7 @@
-package eva.lcp.mixin;
+package eva.lcp.mixin.client;
 
 import com.iamkaf.liteminer.shapes.Cycler;
-import eva.lcp.util.ConfigHolder;
+import eva.lcp.util.ClientConfigHolder;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import org.spongepowered.asm.mixin.Mixin;
@@ -9,10 +9,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.util.List;
 
 @Environment(EnvType.CLIENT)
 @Mixin(value = Cycler.class, remap = false)
@@ -29,7 +26,7 @@ public abstract class CyclerMixin {
     private <T> void replaceInitial0(CallbackInfoReturnable<T> cir) {
         if (firstAccess) {
             firstAccess = false;
-            currentIndex = ConfigHolder.getIndex();
+            currentIndex = ClientConfigHolder.getIndex();
         }
     }
 
@@ -40,7 +37,7 @@ public abstract class CyclerMixin {
     private <T> void replaceInitial1(CallbackInfoReturnable<T> cir) {
         if (firstAccess) {
             firstAccess = false;
-            currentIndex = ConfigHolder.getIndex();
+            currentIndex = ClientConfigHolder.getIndex();
         }
     }
 
@@ -51,7 +48,7 @@ public abstract class CyclerMixin {
     private <T> void replaceInitial2(CallbackInfoReturnable<T> cir) {
         if (firstAccess) {
             firstAccess = false;
-            currentIndex = ConfigHolder.getIndex();
+            currentIndex = ClientConfigHolder.getIndex();
         }
     }
 
@@ -62,7 +59,7 @@ public abstract class CyclerMixin {
     private <T> void replaceInitial3(CallbackInfoReturnable<T> cir) {
         if (firstAccess) {
             firstAccess = false;
-            currentIndex = ConfigHolder.getIndex();
+            currentIndex = ClientConfigHolder.getIndex();
         }
     }
 }
