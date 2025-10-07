@@ -3,9 +3,12 @@
   "package": "eva.lcp.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "CyclerMixin"
+    "LiteminerConfigMixin",
+    "StaircaseDownWalkerMixin",
+    "StaircaseUpWalkerMixin"
   ],
   "client": [
+    "client.CyclerMixin",
     "client.LiteminerClientConfigMixin"
   ],
   "injectors": {
