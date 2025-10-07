@@ -5,11 +5,12 @@
   "mixins": [
     "LiteminerConfigMixin",
     "StaircaseDownWalkerMixin",
-    "StaircaseUpWalkerMixin"
+    "StaircaseUpWalkerMixin",
+    "client.LiteminerClientMixin"
   ],
   "client": [
-    "client.CyclerMixin",
-    "client.LiteminerClientConfigMixin"
+    "client.LiteminerClientConfigMixin",
+    "client.access.CyclerSetter"
   ],
   "injectors": {
     "defaultRequire": 1
